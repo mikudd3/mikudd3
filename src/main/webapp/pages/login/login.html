@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../../plugins/element-ui/lib/theme-chalk/index.css">
+</head>
+
+<body>
+<div id="app">
+    <div class="box">
+        <img src="../../image/logo.png" alt="">
+        <div class="login">
+            <form action="">
+                <input type="text" placeholder="账号" id="username" v-model="user.username">
+                <input type="password" placeholder="密码" id="password" v-model="user.password">
+                <input type="button" id="btn" v-on:click="dosubmit()" value="登录">
+            </form>
+            <div class="foot">
+                <p><a href="SMSLogin.html">手机短信登录</a></p>
+                <p><a id="resister" href="../register/register.html">注册</a>|
+                    <a id="forget" href="../forgetPwd/forgetPwd.html">忘记密码</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/vue.js"></script>
+<script src="../../plugins/element-ui/lib/index.js"></script>
+<script src="../../js/axios-0.18.0.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            user: {
+                username: "",
+                password: "",
+            },
+
+        },
+        methods: {
+            dosubmit() {
+                axios.post("http://localhost:8080/mikudd3/login", "username=" + this.user.username + "&password=" + this.user.password)
+                    .then(resp => {
+                        // alert("这是then")
+                        console.log(resp.data)
+                        if (resp.data == 1) {
+                            location.href = 'http://localhost:8080/mikudd3/pages/admin/users.html';
+                        } else if (resp.data == 2) {
+                            location.href = 'http://localhost:8080/mikudd3/index.html';
+                        } else if (resp.data == 0) {
+                            this.$message.error("登录失败");
+                        }
+                    }).catch(function () {
+                    // alert("这是catch")
+                }).finally(function () {
+                    // alert("这是finally")
+                })
+            },
+
+        },
+    })
+</script>
+</body>
+
+</html>

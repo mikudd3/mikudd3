@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手机短信登录</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/SMSLogin.css">
+
+</head>
+
+<body>
+<div class="smsLogin">
+    <div class="main">
+        <img src="../../image/logo.png" alt="">
+        <form action="">
+            <input type="text" placeholder="手机号" id="username">
+            <input type="password" placeholder="验证码" id="password">
+            <button type="button" id="btn">验证码</button>
+            <button id="btn1">登录</button>
+        </form>
+        <div class="foot">
+            <p><a href="login.html">账号登录</a></p>
+            <p><a id="resister" href="../register/register.html">注册</a>|<a id="forget"
+                                                                             href="../forgetPwd/forgetPwd.html">忘记密码</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 1. 获取元素 按钮
+    const btn = document.querySelector('#btn')
+    // 2. 给按钮注册点击事件
+    btn.addEventListener('click', function () {
+        // 3. 点击之后，禁用按钮，同时开启倒计时
+        this.disabled = true
+        // 控制显示数字的
+        let i = 60
+        btn.innerHTML = `${i}秒之后重新获取`
+        let timer = setInterval(function () {
+            i--
+            // 在定时器里面不能用this，this执行的window
+            btn.innerHTML = `${i}秒之后重新获取`
+
+            // 4. 如果时间为0，则清除定时器，并且更改文字
+            if (i < 0) {
+                clearInterval(timer)
+
+                btn.innerHTML = '获取验证码'
+                btn.disabled = false
+            }
+        }, 1000)
+
+    })
+
+
+</script>
+</body>
+
+</html>

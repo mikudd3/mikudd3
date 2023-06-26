@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mikudd3.mapper.UserMapper">
+
+
+    <update id="update">
+        update user
+        <set>
+            <if test="username!=null and username!=''">
+                username = #{username},
+            </if>
+            <if test="pwd != null and pwd != '' ">
+                `pwd` = #{pwd},
+            </if>
+            <if test="phone != null and phone != '' ">
+                phone = #{phone},
+            </if>
+            <if test="email != null and email != '' ">
+                email = #{email},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+
+    <!--  分页条件查询  -->
+    <select id="selectByPage" resultType="user">
+        select *
+        from user
+        <where>
+            <if test="username != null and username!=''">
+                username like '%${username}%'
+            </if>
+        </where>
+        limit #{begin},#{size}
+    </select>
+
+
+    <!--    分页查询数据库数据数量-->
+    <select id="selectTotalCount" resultType="java.lang.Integer">
+        select count(*)
+        from user
+        <where>
+            <if test="username != null and username != '' ">
+                username like '%${username}%'
+            </if>
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,79 @@
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: url(../image/Desert.jpg) no-repeat 0px 0px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+}
+
+.box {
+    width: 400px;
+    height: 400px;
+    margin: 200px auto;
+    background-color: white;
+}
+
+.box img {
+    width: 100px;
+    height: 100px;
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+
+.msg {
+    text-align: center;
+    margin-bottom: 10px;
+    color: red;
+}
+
+.login {
+    width: 356px;
+    height: 339px;
+    margin: auto;
+}
+
+.login input {
+    width: 356px;
+    height: 50px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+
+.login #btn {
+    width: 356px;
+    height: 50px;
+    background-color: skyblue;
+    color: #fff;
+    border: none;
+}
+
+.foot {
+    margin-top: 10px;
+}
+
+.foot p {
+    font-size: 14px;
+}
+
+.foot p:nth-child(1) {
+    float: left;
+}
+
+.foot p:nth-child(2) {
+    float: right;
+}
+
+#resister {
+    margin-right: 10px;
+
+}
+
+#forget {
+    margin-left: 10px;
+}

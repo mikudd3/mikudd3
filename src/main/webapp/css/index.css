@@ -1,134 +1,206 @@
 @import url(base.css);
 
 body {
-	background-color: #F9F9F9;
+    background-color: #F9F9F9;
 }
 
 #header {
-	background-color: black;
-	font-size: 15px;
+    background-color: black;
+    font-size: 15px;
 }
 
-#header>div {
-	width: 1200px;
-	padding: 10px 0;
-	height: 50px;
-	margin: auto;
-	color: lightgray;
+#header > div {
+    width: 1200px;
+    padding: 10px 0;
+    height: 50px;
+    margin: auto;
+    color: lightgray;
 }
 
 #header a {
-	margin-left: 10px;
-	padding-right: 10px;
-	border-right: 1px solid lightgray;
-;
-	color: lightgray;
+    margin-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid lightgray;;
+    color: lightgray;
 }
 
 #left:hover {
-	color: blue;
+    color: blue;
 }
 
 #right a:hover {
-	color: blue;
+    color: blue;
 }
 
 #main {
-	width: 1200px;
-	margin: auto;
-	/*居于父容器中间*/
+    width: 1200px;
+    margin: auto;
+    /*居于父容器中间*/
 }
 
 #main #m1 {
-	/* margin-top: 20px; */
-	height: 100px;
-	background-color: #fff;
-	margin-bottom: 20px;
+    /* margin-top: 20px; */
+    height: 100px;
+    background-color: #fff;
+    margin-bottom: 20px;
 }
 
 #main #m1 img {
-	width: 200px;
+    width: 300px;
 }
 
-#m1>span>a {
-	color: black;
-	width: 100px;
-	display: inline-block;
-	margin-left: 30px;
-	padding-bottom: 3px;
-	text-indent: 8px;
+#m1 > span > a {
+    color: black;
+    width: 100px;
+    display: inline-block;
+    margin-left: 30px;
+    padding-bottom: 3px;
+    text-indent: 8px;
 }
 
-#m1>span>a:hover {
-	color: skyblue;
+#m1 > span > a:hover {
+    color: skyblue;
 }
 
-#m1>span>a:nth-child(1) {
-	background-color: red;
+#m1 > span > a:nth-child(1) {
+    background-color: red;
 }
 
 #m2 {
-	height: 500px;
-	background-color: rgb(245, 245, 245);
-}
-
-#m2 img {
-	width: 1200px;
-	height: 500px;
-
+    height: 600px;
+    background-color: rgb(245, 245, 245);
 }
 
 .type .title {
-	padding: 20px 0;
+    padding: 20px 0;
 }
 
 .title span {
-	font-size: 30px;
+    font-size: 30px;
 }
 
 .title a {
-	float: right;
-	font-size: 15px;
-	color: black;
+    float: right;
+    font-size: 15px;
+    color: black;
 }
 
 .title a:hover {
-	color: red;
+    color: red;
 }
 
 .content {
-	background-color: #EEF9F4;
+    background-color: #EEF9F4;
 }
 
-.content td>a {
-	width: 99%;
-	height: 350px;
-	background-color: white;
-	display: inline-block;
-	border-radius: 10px;
-	margin: 5px 0;
+.content td > a {
+    width: 99%;
+    height: 350px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 5px 0;
 }
 
-.content td>a:hover {
-	opacity: 0.8;
-	/* 透明效果，取值 0~1，0全透明，1不透明 */
-	color: red;
+.content td > a:hover {
+    opacity: 0.8;
+    /* 透明效果，取值 0~1，0全透明，1不透明 */
+    color: red;
 }
 
-.content td>a>img {
-	width: 240px;
-	height: 260px;
-	padding: 20px;
+.content td > a > img {
+    width: 240px;
+    height: 260px;
+    padding: 20px;
 }
 
-.content td>a>img~div {
-	text-align: center;
+.content td > a > img ~ div {
+    text-align: center;
 }
 
 #footer {
-	padding: 10px;
-	background-color: black;
-	color: gray;
-	text-align: center;
-	font-size: 15px;
+    padding: 10px;
+    background-color: black;
+    color: gray;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+.slider {
+    width: 1200px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    width: 100%;
+    height: 520px;
+}
+
+.slider-wrapper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.slider-footer {
+    height: 80px;
+    background-color: rgb(100, 67, 68);
+    padding: 12px 12px 0 12px;
+    position: relative;
+}
+
+.slider-footer .toggle {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    display: flex;
+}
+
+.slider-footer .toggle button {
+    margin-right: 12px;
+    width: 28px;
+    height: 28px;
+    appearance: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.slider-footer .toggle button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.slider-footer p {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.slider-indicator {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.slider-indicator li {
+    width: 8px;
+    height: 8px;
+    margin: 4px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.slider-indicator li.active {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
 }

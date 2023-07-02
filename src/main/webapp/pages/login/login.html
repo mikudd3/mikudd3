@@ -45,14 +45,14 @@
         },
         methods: {
             dosubmit() {
-                axios.post("http://localhost:8080/mikudd3/login", "username=" + this.user.username + "&password=" + this.user.password)
+                axios.post("http://localhost:8080/login", "username=" + this.user.username + "&password=" + this.user.password)
                     .then(resp => {
                         // alert("这是then")
                         console.log(resp.data)
                         if (resp.data == 1) {
-                            location.href = 'http://localhost:8080/mikudd3/pages/admin/users.html';
+                            location.href = '../admin/main.html';
                         } else if (resp.data == 2) {
-                            location.href = 'http://localhost:8080/mikudd3/index.html';
+                            location.href = 'http://localhost:8080/index.html';
                         } else if (resp.data == 0) {
                             this.$message.error("登录失败");
                         }

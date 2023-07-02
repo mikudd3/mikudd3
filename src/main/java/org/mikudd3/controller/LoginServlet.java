@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             if (user.getIsAdmin() == 1) {
                 response.getWriter().write("1");
-//                request.getRequestDispatcher("/pages/admin/users.html").forward(request, response);
+//                request.getRequestDispatcher("/pages/admin/userlist.html").forward(request, response);
             } else {
                 response.getWriter().write("2");
 //                request.getRequestDispatcher("/pages/index.html").forward(request, response);

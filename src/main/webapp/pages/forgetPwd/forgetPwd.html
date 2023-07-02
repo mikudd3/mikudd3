@@ -82,7 +82,7 @@
                     console.log("密码验证通过，提交表单");
                     axios({
                         method: "post",
-                        url: "http://localhost:8080/mikudd3/forgetPassword?checkCode=" + this.checkCode + "&username=" + this.user.username + "&password=" + this.user.password,
+                        url: "http://localhost:8080/forgetPassword?checkCode=" + this.checkCode + "&username=" + this.user.username + "&password=" + this.user.password,
                     }).then(Response => {
                         if (Response.data == "checkError") {
                             this.$message.error("验证码输入错误")
@@ -99,7 +99,7 @@
                 }
             },
             changeImg() {
-                document.getElementById("checkImg").src = "/mikudd3/checkCode?" + new Date().getMilliseconds();
+                document.getElementById("checkImg").src = "/checkCode?" + new Date().getMilliseconds();
             }
         }
 

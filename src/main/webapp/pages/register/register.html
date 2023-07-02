@@ -52,7 +52,7 @@
                 phone: "",
                 email: "",
             },
-            imgCode: "/mikudd3/checkCode?" + new Date().getMilliseconds(),
+            imgCode: "/checkCode?" + new Date().getMilliseconds(),
         },
         methods:
             {
@@ -83,12 +83,12 @@
                     if (this.validateForm()) {
                         axios({
                             method: "post",
-                            url: "http://localhost:8080/mikudd3/register?checkCode=" + this.checkCode,
+                            url: "http://localhost:8080/register?checkCode=" + this.checkCode,
                             data: this.user,
                         }).then(resp => {
                             //如果注册成功
                             if (resp.data == "success") {
-                                location.href = "http://localhost:8080/mikudd3/pages/login/login.html";
+                                location.href = "http://localhost:8080/pages/login/login.html";
                             } else if (resp.data == "usernameHad") {
                                 this.$message.error("注册失败,该用户已存在")
                             } else if (resp.data == "codeFail") {
@@ -102,7 +102,7 @@
                     }
                 },
                 changeImg() {
-                    this.imgCode = "/mikudd3/checkCode?" + new Date().getMilliseconds();
+                    this.imgCode = "/checkCode?" + new Date().getMilliseconds();
                 }
             },
 

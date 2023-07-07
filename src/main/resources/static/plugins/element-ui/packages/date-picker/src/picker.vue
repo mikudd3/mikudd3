@@ -533,7 +533,7 @@ export default {
       }
 
       // NOTE: deal with common but incorrect usage, should remove in next major version
-      // user might provide string / timestamp without value-format, coerce them into date (or array of date)
+      // employee might provide string / timestamp without value-format, coerce them into date (or array of date)
       return Array.isArray(this.value) ? this.value.map(val => new Date(val)) : new Date(this.value);
     },
 
@@ -615,7 +615,7 @@ export default {
       }
     },
 
-    // {parse, formatTo} String deals with user input
+    // {parse, formatTo} String deals with employee input
     parseString(value) {
       const type = Array.isArray(value) ? this.type : this.type.replace('range', '');
       return parseAsFormatAndType(value, this.format, type);
@@ -751,7 +751,7 @@ export default {
           this.blur();
           event.stopPropagation();
         } else {
-          // user may change focus between two input
+          // employee may change focus between two input
           setTimeout(() => {
             if (this.refInput.indexOf(document.activeElement) === -1) {
               this.pickerVisible = false;
@@ -774,7 +774,7 @@ export default {
         return;
       }
 
-      // if user is typing, do not let picker handle key input
+      // if employee is typing, do not let picker handle key input
       if (this.userInput) {
         event.stopPropagation();
         return;
@@ -897,7 +897,7 @@ export default {
     },
 
     emitChange(val) {
-      // determine user real change only
+      // determine employee real change only
       if (!valueEquals(val, this.valueOnOpen)) {
         this.$emit('change', val);
         this.valueOnOpen = val;

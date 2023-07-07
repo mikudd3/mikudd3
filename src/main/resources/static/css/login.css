@@ -17,10 +17,10 @@ html {
     background-color: white;
 }
 
-.box img {
-    width: 100px;
+.box > img {
+    width: 200px;
     height: 100px;
-    margin-left: 150px;
+    margin-left: 100px;
     margin-bottom: 20px;
 }
 

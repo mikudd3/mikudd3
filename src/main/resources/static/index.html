@@ -11,92 +11,50 @@
 <body>
 <div id="header">
     <div>
-        <span id="left">MIKUDD3游戏商城</span>
-        <span id="right" style="float: right;">
-				<a href="pages/login/login.html">登录</a>
-				<a href="pages/register/register.html">注册</a>
-			</span>
+        <img src="image/logo.png">
+        <span id="right">
+                <a href="#hot">热销</a>
+				<a href="#good">好评如潮</a>
+				<a href="#dazhe">折扣</a>
+                <input type="text" placeholder="搜索" id="ipu">
+                <a href="login.html">登录</a>
+				<a href="register.html">注册</a>
+                <img src="./image/tx.jpg" id="tx">
+        </span>
     </div>
 </div>
 
 <div id="main">
-    <div id="m1">
-			<span>
-				<img src="image/logo.png" a lt="" style="vertical-align: middle;">
-				<a href="">热销</a>
-				<a href="">好评如潮</a>
-				<a href="">热门</a>
-			</span>
-        <span style="float:right;padding-top: 40px;">
-				<input type="text" placeholder="搜索"
-                       style="width:200px;height: 20px;border-radius: 10px;text-indent: 10px;">
-			</span>
-    </div>
     <div id="m2">
-        <div class="slider">
+        <div id="slider">
             <div class="slider-wrapper">
-                <img src="image/slider01.jpg" alt=""/>
+                <img :src="currentSlide.url" alt=""/>
             </div>
-            <div class="slider-footer">
-                <p>来感受类魂开放世界的无限魅力</p>
+            <div class="slider-footer" :style="{backgroundColor: currentSlide.color }">
+                <p>{{ currentSlide.title }}</p>
                 <ul class="slider-indicator">
-                    <li class="active"></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li v-for="(slide, index) in slides" :key="index" :class="{ active: index === currentIndex }"></li>
                 </ul>
                 <div class="toggle">
-                    <button class="prev">&lt;</button>
-                    <button class="next">&gt;</button>
+                    <button class="prev" @click="prevSlide">&lt;</button>
+                    <button class="next" @click="nextSlide">&gt;</button>
                 </div>
             </div>
         </div>
     </div>
     <div id="m3" class="type">
-        <div class="title">
+        <div class="title" id="hot">
             <span>热销</span>
             <a href="#">查看更多 > </a>
         </div>
-        <div class="content">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <div class="content" id="hotgame">
+            <table>
                 <tr>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/1.jpg" alt="">
-                            <div>无主之地3</div>
-                            <div>￥199</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/2.jpg" alt="">
-                            <div>无主之地2</div>
-                            <div>￥166</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/3.jpg" alt="">
-                            <div>地铁：离去</div>
-                            <div>￥188</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/4.jpg" alt="">
-                            <div>地铁：最后的曙光</div>
-                            <div>￥199</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/5.jpg" alt="">
-                            <div>地铁：2033</div>
-                            <div>￥199</div>
+                    <td v-for="game in games" :key="game.id">
+                        <a :href="game.link">
+                            <img :src="game.image" alt="">
+                            <div>{{game.title}}</div>
+                            <div>{{game.price}}</div>
                         </a>
                     </td>
                 </tr>
@@ -104,46 +62,18 @@
         </div>
     </div>
     <div id="m4" class="type">
-        <div class="title">
+        <div class="title" id="good">
             <span>好评如潮</span>
             <a href="#">查看更多 > </a>
         </div>
-        <div class="content">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <div class="content" id="goodgame">
+            <table>
                 <tr>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/1.jpg" alt="">
-                            <div>无主之地3</div>
-                            <div>￥199</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/2.jpg" alt="">
-                            <div>无主之地2</div>
-                            <div>￥166</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/3.jpg" alt="">
-                            <div>地铁：离去</div>
-                            <div>￥188</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/4.jpg" alt="">
-                            <div>地铁：最后的曙光</div>
-                            <div>￥199</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/5.jpg" alt="">
-                            <div>地铁：2033</div>
-                            <div>￥199</div>
+                    <td v-for="game in games" :key="game.id">
+                        <a :href="game.link">
+                            <img :src="game.image" alt="">
+                            <div>{{game.title}}</div>
+                            <div>{{game.price}}</div>
                         </a>
                     </td>
                 </tr>
@@ -151,46 +81,18 @@
         </div>
     </div>
     <div id="m5" class="type">
-        <div class="title">
-            <span>热门</span>
+        <div class="title" id="dazhe">
+            <span>折扣</span>
             <a href="#">查看更多 > </a>
         </div>
-        <div class="content">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <div class="content" id="dazhegame">
+            <table>
                 <tr>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/1.jpg" alt="">
-                            <div>无主之地3</div>
-                            <div>￥199</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/2.jpg" alt="">
-                            <div>无主之地2</div>
-                            <div>￥166</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/3.jpg" alt="">
-                            <div>地铁：离去</div>
-                            <div>￥188</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/4.jpg" alt="">
-                            <div>地铁：最后的曙光</div>
-                            <div>￥199</div>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <img src="uploads/5.jpg" alt="">
-                            <div>地铁：2033</div>
-                            <div>￥199</div>
+                    <td v-for="game in games" :key="game.id">
+                        <a :href="game.link">
+                            <img :src="game.image" alt="">
+                            <div>{{game.title}}</div>
+                            <div>{{game.price}}</div>
                         </a>
                     </td>
                 </tr>
@@ -202,7 +104,9 @@
     京公网安备 11010802020110号 © Copyright2023. mikudd3版权所有 | 京ICP备11024110号
 </div>
 
+<script src="js/vue.js"></script>
 <script src="js/lbao.js"></script>
+<script src="js/index.js"></script>
 </body>
 
 </html>

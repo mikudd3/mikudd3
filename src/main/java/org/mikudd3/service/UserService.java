@@ -1,9 +1,7 @@
 package org.mikudd3.service;
 
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 import org.mikudd3.entity.PageBean;
-import org.mikudd3.entity.User;
+import org.mikudd3.entity.Employee;
 
 import java.util.List;
 
@@ -16,9 +14,9 @@ public interface UserService {
     /**
      * 添加用户,用于注册
      *
-     * @param user
+     * @param employee
      */
-    void add(User user);
+    void add(Employee employee);
 
     /**
      * 根据id删除用户
@@ -31,23 +29,23 @@ public interface UserService {
     /**
      * 修改
      *
-     * @param user
+     * @param employee
      */
-    void update(User user);
+    void update(Employee employee);
 
     /**
      * 查询所有
      *
      * @return
      */
-    List<User> selectAll();
+    List<Employee> selectAll();
 
     /**
      * 根据姓名查询用户
      *
      * @return
      */
-    User selectByName(String username);
+    Employee selectByName(String username);
 
 
     /**
@@ -57,7 +55,7 @@ public interface UserService {
      * @param password
      * @return
      */
-    User selectByNameAndPassword(String username, String password);
+    Employee selectByNameAndPassword(String username, String password);
 
 
     /**
@@ -66,7 +64,7 @@ public interface UserService {
      * @param id
      * @return
      */
-    User selectById(Integer id);
+    Employee selectById(Integer id);
 
     /**
      * 分页查询
@@ -76,6 +74,6 @@ public interface UserService {
      * @param
      * @return
      */
-    PageBean<User> selectByPage(int begin, int size, String username);
+    PageBean<Employee> selectByPage(int begin, int size, String username);
 
 }

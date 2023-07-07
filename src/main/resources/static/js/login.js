@@ -1,7 +1,7 @@
 new Vue({
     el: "#app",
     data: {
-        user: {
+        employee: {
             username: "",
             password: "",
         },
@@ -14,9 +14,9 @@ new Vue({
                     // alert("这是then")
                     console.log(resp.data)
                     if (resp.data == 1) {
-                        location.href = '../admin/main.html';
+                        location.href = '../pages/admin/main.html';
                     } else if (resp.data == 2) {
-                        location.href = '../../index.html';
+                        location.href = '../index.html';
                     } else if (resp.data == 0) {
                         this.$message.error("登录失败");
                     }

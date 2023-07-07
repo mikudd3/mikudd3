@@ -209,7 +209,7 @@
 - Chore
   - Update theme base api (#16607 by @iamkun)
   - Add form theme token (#16699 by @iamkun)
-  - Mark ali inner user's access (#16609 by @iamkun)
+  - Mark ali inner employee's access (#16609 by @iamkun)
   - Fix doc anchor bug (#16692 by @iamkun)
 
 ### 2.10.1

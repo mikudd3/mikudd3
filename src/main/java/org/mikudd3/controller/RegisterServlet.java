@@ -1,7 +1,6 @@
 package org.mikudd3.controller;
 
-import com.alibaba.fastjson2.JSON;
-import org.mikudd3.entity.User;
+import org.mikudd3.entity.Employee;
 import org.mikudd3.service.UserService;
 import org.mikudd3.service.serviceimpl.UserServiceImpl;
 
@@ -10,7 +9,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
@@ -24,8 +22,8 @@ public class RegisterServlet extends HttpServlet {
         //获取user对象
         BufferedReader br = request.getReader();
         String params = br.readLine();
-        User user = JSON.parseObject(params, User.class);
-        System.out.println(user);
+//        Employee employee = JSON.parseObject(params, Employee.class);
+//        System.out.println(employee);
 
 
         // 程序生成的验证码，从Session获取
@@ -42,14 +40,14 @@ public class RegisterServlet extends HttpServlet {
         }
 
         // 3. 判断注册成功与否
-        User u = service.selectByName(user.getUsername());
-        if (u == null) {
-            //2. 调用service 注册
-            service.add(user);
-            response.getWriter().write("success");
-        } else {
-            response.getWriter().write("usernameHad");
-        }
+//        Employee u = service.selectByName(employee.getUsername());
+//        if (u == null) {
+//            //2. 调用service 注册
+//            service.add(employee);
+//            response.getWriter().write("success");
+//        } else {
+//            response.getWriter().write("usernameHad");
+//        }
     }
 
     @Override

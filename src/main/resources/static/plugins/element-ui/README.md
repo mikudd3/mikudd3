@@ -44,17 +44,17 @@
     <tr>
       <td align="center" valign="middle">
         <a href="https://tipe.io/?ref=element" target="_blank">
-          <img width="150px" src="https://user-images.githubusercontent.com/1016365/34124854-48fafa06-e3e9-11e7-8c04-251055feebee.png">
+          <img width="150px" src="https://employee-images.githubusercontent.com/1016365/34124854-48fafa06-e3e9-11e7-8c04-251055feebee.png">
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://www.duohui.cn/?utm_source=element&utm_medium=web&utm_campaign=element-index" target="_blank">
-          <img width="150px" src="https://user-images.githubusercontent.com/10095631/35603534-bb24470c-0678-11e8-8bcc-17ceaef8cbef.png">
+          <img width="150px" src="https://employee-images.githubusercontent.com/10095631/35603534-bb24470c-0678-11e8-8bcc-17ceaef8cbef.png">
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://bitsrc.io/" target="_blank">
-          <img width="150px" src="https://user-images.githubusercontent.com/10095631/41342907-e44e7196-6f2f-11e8-92f2-47702dc8f059.png">
+          <img width="150px" src="https://employee-images.githubusercontent.com/10095631/41342907-e44e7196-6f2f-11e8-92f2-47702dc8f059.png">
         </a>
       </td>
     </tr>
@@ -65,10 +65,10 @@
 
 ## Links
 - Homepage and documentation
-  - [International users](http://element.eleme.io/#/en-US)
-  - [Chinese users](http://element-cn.eleme.io/#/zh-CN)
-  - [Spanish users](http://element.eleme.io/#/es)
-  - [French users](http://element.eleme.io/#/fr-FR)
+  - [International employees](http://element.eleme.io/#/en-US)
+  - [Chinese employees](http://element-cn.eleme.io/#/zh-CN)
+  - [Spanish employees](http://element.eleme.io/#/es)
+  - [French employees](http://element.eleme.io/#/fr-FR)
 - [awesome-element](https://github.com/ElementUI/awesome-element)
 - [FAQ](./FAQ.md)
 - [Customize theme](http://element.eleme.io/#/en-US/component/custom-theme)
@@ -82,8 +82,8 @@
   - [element-in-laravel-starter](https://github.com/ElementUI/element-in-laravel-starter)
 - [Design resources](https://github.com/ElementUI/Resources)
 - Gitter
-  - [International users](https://gitter.im/element-en/Lobby)
-  - [Chinese users](https://gitter.im/ElemeFE/element)
+  - [International employees](https://gitter.im/element-en/Lobby)
+  - [Chinese employees](https://gitter.im/ElemeFE/element)
 
 ## Install
 ```shell
@@ -160,7 +160,7 @@ French documentation is made possible by these community developers:
 ## Donation
 If you find Element useful, you can buy us a cup of coffee
 
-<img width="650" src="https://user-images.githubusercontent.com/14025786/44833997-5d7c4d80-ac62-11e8-8445-1dffec0eb13c.png" alt="donation">
+<img width="650" src="https://employee-images.githubusercontent.com/14025786/44833997-5d7c4d80-ac62-11e8-8445-1dffec0eb13c.png" alt="donation">
 
 ## Backers
 
@@ -237,7 +237,7 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 
 Scan the QR code using [Dingtalk App](https://www.dingtalk.com/) to join in discussion group :
 
-<img alt="Join Discusion Group" src="https://user-images.githubusercontent.com/17680888/66537329-9a4b9100-eb52-11e9-9d99-65469cfdae58.jpeg" width="300">
+<img alt="Join Discusion Group" src="https://employee-images.githubusercontent.com/17680888/66537329-9a4b9100-eb52-11e9-9d99-65469cfdae58.jpeg" width="300">
 
 
 ## LICENSE

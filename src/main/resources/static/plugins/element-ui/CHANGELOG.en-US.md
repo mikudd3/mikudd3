@@ -209,7 +209,7 @@
 - Chore
   - Update theme base api (#16607 by @iamkun)
   - Add form theme token (#16699 by @iamkun)
-  - Mark ali inner user's access (#16609 by @iamkun)
+  - Mark ali inner employee's access (#16609 by @iamkun)
   - Fix doc anchor bug (#16692 by @iamkun)
 
 ### 2.10.1
@@ -957,7 +957,7 @@ Docs
 - Fixed the problem that Tabs did not scroll to the selected tab, #12948
 - Fixed the problem that the identifier does not display when the Tree node is dragged, #12854
 - The validate event parameter of Form contains the validation message, #12860 (by @YamenSharaf)
-- Fixed DatePicker not to verify the validity of user input time, #12898
+- Fixed DatePicker not to verify the validity of employee input time, #12898
 - Fixed the problem that `render-header` attribute of Table header doesn't work, #12914
 
 ### 2.4.7
@@ -1239,7 +1239,7 @@ Docs
 - Menu
   - Now collapsed Menu will only show the Tooltip when the `title` slot of MenuItem is set, #10193 (by @PanJiaChen)
 - Pagination
-  - Fixed `current-change` event wrongly triggering without user interaction, #10247
+  - Fixed `current-change` event wrongly triggering without employee interaction, #10247
 - DatePicker
   - Now the date and time value in the dropdown panel are correctly formatted based on the `format` attribute, #10174(by @remizovvv)
 - Upload
@@ -1257,7 +1257,7 @@ Docs
 - Now DatePicker's range mode supports reverse selection (clicking the end date, then clicking the start date), #8156 (by @earlymeme)
 - Added `disabled` attribute for Pagination, #10006
 - Added `after-enter` and ` after-leave` events for Popover, #10047
-- Fixed Select not triggering validation when user selects an option after executing `resetFields` of Form, #10105
+- Fixed Select not triggering validation when employee selects an option after executing `resetFields` of Form, #10105
 - Fixed incorrect widths of fixed columns of Table in some cases, #10130
 - Fixed MessageBox inheriting the `title` attribute of its previous instance when called without `title`, #10126 (by @Pochodaydayup)
 - Added `input-size` attribute for Slider, #10154
@@ -1296,7 +1296,7 @@ Docs
 #### Bug fixes
 - Table
   - Fixed clicking expanding icon of an expandable row triggers `row-click` event, #9654
-  - Fixed layout not update when column width is changed by user dragging, #9668
+  - Fixed layout not update when column width is changed by employee dragging, #9668
   - Fixed style issue when summary row co-exists with fixed columns, #9667
 - Container
   - Fixed container components not stretching in IE11, #9655
@@ -1603,7 +1603,7 @@ Docs
 - General
   - Removed `theme-default`
   - Compatible with Vue 2.5.2+ and IE 10+
-  - `change` event of form components and `current-change` event of Pagination now only trigger on user interaction
+  - `change` event of form components and `current-change` event of Pagination now only trigger on employee interaction
   - `size` attribute of Button and form components now accept `medium`, `small` and `mini`
   - To facilitate the use of third-party icons, `icon` attribute of Button and Steps, `prefix-icon` and `suffix-icon` attributes of Input now require a full class name
 - Dialog
@@ -1626,7 +1626,7 @@ Docs
 - Input
   - Removed `icon` attribute. Now the suffix icon can be configured using `suffix-icon` attribute or `suffix` named slot
   - Removed `on-icon-click` attribute and `click` event. Now to add click handler on icons, please use named slots
-  - `change` event now behaves like the native input element, which triggers only on blur or pressing enter. If you need to respond to user input in real time, you can use `input` event.
+  - `change` event now behaves like the native input element, which triggers only on blur or pressing enter. If you need to respond to employee input in real time, you can use `input` event.
 - Autocomplete
   - Removed `custom-item` attribute. Now the template of input suggestions can be customized using `scoped slot`
   - Removed `props` attribute. Now you can use `value-key` attribute to designate key name of the input suggestion object for display
@@ -1643,4 +1643,4 @@ Docs
   - The params of `row-class-name` and `row-style` method is now an object
 
 ##
-<i><sup>*</sup> Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). So when `dangerouslyUseHTMLString` is on, please make sure the content of `message` is trusted, and **never** assign `message` to user-provided content.</i>
+<i><sup>*</sup> Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). So when `dangerouslyUseHTMLString` is on, please make sure the content of `message` is trusted, and **never** assign `message` to employee-provided content.</i>

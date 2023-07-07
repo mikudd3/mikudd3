@@ -1,17 +1,15 @@
 package org.mikudd3.service.serviceimpl;
 
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.mikudd3.entity.Employee;
 import org.mikudd3.entity.PageBean;
-import org.mikudd3.entity.User;
 import org.mikudd3.jdbc.SqlSessionFactoryUtils;
 import org.mikudd3.mapper.UserMapper;
 import org.mikudd3.service.UserService;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @project:
@@ -23,12 +21,12 @@ public class UserServiceImpl implements UserService {
     SqlSessionFactory factory = SqlSessionFactoryUtils.getSqlSessionFactory();
 
     @Override
-    public void add(User user) {
+    public void add(Employee employee) {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         //调用方法
-        userMapper.add(user);
+        userMapper.add(employee);
         //提交事务
         sqlSession.commit();
         //关闭资源
@@ -49,12 +47,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void update(User user) {
+    public void update(Employee employee) {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         //调用方法
-        userMapper.update(user);
+        userMapper.update(employee);
         //提交事务
         sqlSession.commit();
         //关闭资源
@@ -62,59 +60,59 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> selectAll() {
+    public List<Employee> selectAll() {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         //调用方法
-        List<User> users = userMapper.selectAll();
+        List<Employee> employees = userMapper.selectAll();
         //关闭资源
         sqlSession.close();
 
-        return users;
+        return employees;
     }
 
     @Override
-    public User selectByName(String username) {
+    public Employee selectByName(String username) {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         //调用方法
-        User user = userMapper.selectByName(username);
+        Employee employee = userMapper.selectByName(username);
         //关闭资源
         sqlSession.close();
 
-        return user;
+        return employee;
     }
 
     @Override
-    public User selectByNameAndPassword(String username, String password) {
+    public Employee selectByNameAndPassword(String username, String password) {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         //调用方法
-        User user = userMapper.selectByNameAndPassword(username, password);
+        Employee employee = userMapper.selectByNameAndPassword(username, password);
         //关闭资源
         sqlSession.close();
 
-        return user;
+        return employee;
     }
 
     @Override
-    public User selectById(Integer id) {
+    public Employee selectById(Integer id) {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         //调用方法
-        User user = userMapper.selectById(id);
+        Employee employee = userMapper.selectById(id);
         //关闭资源
         sqlSession.close();
 
-        return user;
+        return employee;
     }
 
     @Override
-    public PageBean<User> selectByPage(int currPage, int pageSize, String username) {
+    public PageBean<Employee> selectByPage(int currPage, int pageSize, String username) {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
@@ -123,12 +121,12 @@ public class UserServiceImpl implements UserService {
         int size = pageSize;
 
         //查询当前页数据
-        List<User> rows = userMapper.selectByPage(begin, size, username);
+        List<Employee> rows = userMapper.selectByPage(begin, size, username);
         //查询数量
         int count = userMapper.selectTotalCount();
 
         //组合为pageBean
-        PageBean<User> userPageBean = new PageBean<>(count, rows);
+        PageBean<Employee> userPageBean = new PageBean<>(count, rows);
         //关闭资源
         sqlSession.close();
         return userPageBean;

@@ -380,7 +380,7 @@
           this.emit(this.value);
         } else {
           // value were emitted in handle{Date,Time}Pick, nothing to update here
-          // deal with the scenario where: user opens the picker, then confirm without doing anything
+          // deal with the scenario where: employee opens the picker, then confirm without doing anything
           const value = this.value
             ? this.value
             : modifyWithTimeString(this.getDefaultValue(), this.defaultTime);

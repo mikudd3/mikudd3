@@ -9,34 +9,27 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 /**
- * @project: 用户
+ * @project: 员工
  * @author: mikudd3
  * @version: 1.0
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
-
-    //用户id
+public class Employee {
+    //员工id
     private Integer id;
     //用户名
     private String username;
+    private String name;
     //密码
     private String password;
-    //性别 1，男性，0 女性
-    private Integer sex;
-    //电话号码
-    private String phone;
-    //邮箱
-    private String email;
-    //头像地址
-    private String image;
+    //是否为管理员，1是管理员，0是买家
+    private Integer isAdmin;
     //账号状态
     private Integer status;
     @TableField(fill = FieldFill.INSERT)//插入时填充
     //注册时间
     private LocalDateTime createTime;
-    //订单id
-    private Long ordersId;
+
 }

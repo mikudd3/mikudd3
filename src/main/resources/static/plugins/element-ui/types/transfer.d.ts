@@ -44,7 +44,7 @@ export declare class ElTransfer extends ElementUIComponent {
   /** Custom filter method */
   filterMethod: (query: string, item: TransferData) => boolean
 
-  /** Order strategy for elements in the target list */
+  /** Orders strategy for elements in the target list */
   targetOrder: string
 
   /** Custom list titles */

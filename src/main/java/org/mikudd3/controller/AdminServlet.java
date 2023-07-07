@@ -1,8 +1,8 @@
 package org.mikudd3.controller;
 
 import com.alibaba.fastjson.JSON;
+import org.mikudd3.entity.Employee;
 import org.mikudd3.entity.PageBean;
-import org.mikudd3.entity.User;
 import org.mikudd3.service.UserService;
 import org.mikudd3.service.serviceimpl.UserServiceImpl;
 
@@ -11,7 +11,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/admin/*")
 public class AdminServlet extends HttpServlet {
@@ -59,10 +58,10 @@ public class AdminServlet extends HttpServlet {
         BufferedReader br = request.getReader();
         String params = br.readLine();
         // 将JSON字符串转为Java对象
-        User user = JSON.parseObject(params, User.class);
-        System.out.println(user);
+        Employee employee = JSON.parseObject(params, Employee.class);
+        System.out.println(employee);
         //查询数据
-        PageBean<User> pageBean = service.selectByPage(Integer.parseInt(currPage), Integer.parseInt(pageSize), user.getUsername());
+        PageBean<Employee> pageBean = service.selectByPage(Integer.parseInt(currPage), Integer.parseInt(pageSize), employee.getUsername());
         //2. 将集合转换为JSON数据   序列化
         String jsonString = JSON.toJSONString(pageBean);
         System.out.println(jsonString);
@@ -104,17 +103,17 @@ public class AdminServlet extends HttpServlet {
         BufferedReader br = request.getReader();
         String prams = br.readLine();
         //获取对象
-        User user = JSON.parseObject(prams, User.class);
-        System.out.println(user);
+        Employee employee = JSON.parseObject(prams, Employee.class);
+        System.out.println(employee);
 
         //先根据用户判断用户名是否已经存在
-        if (service.selectByName(user.getUsername()) != null) {
+        if (service.selectByName(employee.getUsername()) != null) {
             response.getWriter().write("userHadExist");
             return;
         }
 
         // 如果用户不存在，则添加到数据库
-        service.add(user);
+        service.add(employee);
         response.getWriter().write("success");
 
     }
@@ -132,10 +131,10 @@ public class AdminServlet extends HttpServlet {
         BufferedReader br = request.getReader();
         String prams = br.readLine();
         //获取对象
-        User user = JSON.parseObject(prams, User.class);
-        System.out.println(user);
+        Employee employee = JSON.parseObject(prams, Employee.class);
+        System.out.println(employee);
 
-        service.update(user);
+        service.update(employee);
 
     }
 
@@ -153,11 +152,11 @@ public class AdminServlet extends HttpServlet {
         System.out.println(id);
 
         //根据id返回对象信息
-        User user = service.selectById(Integer.valueOf(id));
-        System.out.println(user);
+        Employee employee = service.selectById(Integer.valueOf(id));
+        System.out.println(employee);
 
         //2. 将集合转换为JSON数据   序列化
-        String jsonString = JSON.toJSONString(user);
+        String jsonString = JSON.toJSONString(employee);
         System.out.println(jsonString);
         //测试
         System.out.println(1);

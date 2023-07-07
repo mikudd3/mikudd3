@@ -39,9 +39,8 @@ public class LoginCheckFilter implements Filter {
 
         //定义放行数组
         String[] uris = new String[]{
-                "/employee/login", "/employee/logout",
-                "/backend/**", "/front/**",
-                "/user/sendMsg", "/user/login"
+//                "/employee/login",
+                "/backend/**",
         };
 
         //2.判断本次请求是否需要处理
@@ -101,6 +100,7 @@ public class LoginCheckFilter implements Filter {
             if (match) {
                 return match;
             }
+            return true;
         }
         return false;
     }

@@ -16,5 +16,6 @@ public class LunBaoTu {
 
     private Integer id;
     private String url;
-    private String description;
+    private String title;
+    private String color;
 }

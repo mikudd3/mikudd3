@@ -11,36 +11,36 @@ import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    private UserService service = new UserServiceImpl();
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //获取数据
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        System.out.println(username);
-        Employee employee = service.selectByNameAndPassword(username, password);
-        if (employee == null) {
-//            request.getRequestDispatcher("/pages/login/login.jsp").forward(request, response);
-            response.getWriter().write("0");
-        } else {
-            if (employee.getIsAdmin() == 1) {
-                response.getWriter().write("1");
-//                request.getRequestDispatcher("/pages/admin/userlist.html").forward(request, response);
-            } else {
-                response.getWriter().write("2");
-//                request.getRequestDispatcher("/pages/index.html").forward(request, response);
-            }
-        }
+//    private UserService service = new UserServiceImpl();
+//
+//    @Override
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        //获取数据
+//        String username = request.getParameter("username");
+//        String password = request.getParameter("password");
+//        System.out.println(username);
+//        EmployeeServiceImpl employee = service.selectByNameAndPassword(username, password);
+//        if (employee == null) {
+////            request.getRequestDispatcher("/pages/login/login.jsp").forward(request, response);
+//            response.getWriter().write("0");
+//        } else {
+//            if (employee.getIsAdmin() == 1) {
+//                response.getWriter().write("1");
+////                request.getRequestDispatcher("/pages/admin/userlist.html").forward(request, response);
+//            } else {
+//                response.getWriter().write("2");
+////                request.getRequestDispatcher("/pages/index.html").forward(request, response);
+//            }
+//        }
 
 //        //获取请求体数据
 //        BufferedReader br = request.getReader();
 //        String params = br.readLine();
 //        //将json数据转为Java对象
-//        Employee employee = JSON.parseObject(params, Employee.class);
+//        EmployeeServiceImpl employee = JSON.parseObject(params, EmployeeServiceImpl.class);
 //        System.out.println(employee);
 //        //调用service查询
-//        Employee u = service.selectByNameAndPassword(employee.getUsername(), employee.getPassword());
+//        EmployeeServiceImpl u = service.selectByNameAndPassword(employee.getUsername(), employee.getPassword());
 //        System.out.println(u);
 //        if (u != null) {
 //            System.out.println(111);
@@ -55,10 +55,10 @@ public class LoginServlet extends HttpServlet {
 //
 //        }
 
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.doGet(request, response);
-    }
+//    }
+//
+//    @Override
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        this.doGet(request, response);
+//    }
 }

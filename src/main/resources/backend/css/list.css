@@ -1,0 +1,85 @@
+@import url(base.css);
+
+body {
+    background-color: #F9F9F9;
+}
+
+#header {
+    background-color: whitesmoke;
+    height: 120px;
+}
+
+
+#header > div {
+    width: 1200px;
+    padding: 10px 0;
+    margin: auto;
+}
+
+#header > div > img {
+    width: 330px;
+}
+
+#header #tx {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+    float: right;
+}
+
+#header #ipu {
+    width: 250px;
+    height: 40px;
+    margin: 0 30px;
+    border-radius: 10px;
+    text-indent: 10px;
+}
+
+#header a {
+    margin: 20px;
+    font-size: 18px;
+    color: black;
+}
+
+
+#header a:hover {
+    color: skyblue;
+}
+
+
+#main{
+    background: white;
+    width: 1200px;
+    margin: 20px auto;
+    height: 1000px;
+}
+
+#main >ul >li{
+    /*margin: 20px;*/
+    border: 2px solid blanchedalmond;
+    padding: 50px;
+    margin: 20px;
+    /*display: inline-block;*/
+}
+
+#main img{
+    width: 200px;
+    height: 200px;
+}
+
+#main #r{
+    display: inline-block;
+    margin-left: 100px;
+
+}
+
+#main #r p{
+    padding-top: 20px;
+    font-size: 24px;
+}
+#main #r p:nth-last-child(1){
+    color: red;
+}
